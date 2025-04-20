@@ -29,11 +29,13 @@
 					:disabled="!!props.shiftAssignmentName"
 					:options="shiftTypes.data"
 				/>
-				<DatePicker
-					label="Start Date"
-					v-model="form.start_date"
-					:disabled="!!props.shiftAssignmentName"
-				/>
+				<div class="space-y-1.5">
+					<div class="text-xs text-gray-600">Start Date</div>
+					<DatePicker
+						v-model="form.start_date"
+						:disabled="!!props.shiftAssignmentName"
+					/>
+				</div>
 				<FormControl
 					type="autocomplete"
 					label="Shift Location"
@@ -41,7 +43,10 @@
 					:disabled="!!props.shiftAssignmentName"
 					:options="shiftLocations.data"
 				/>
-				<DatePicker label="End Date" v-model="form.end_date" />
+				<div class="space-y-1.5">
+					<div class="text-xs text-gray-600">End Date</div>
+					<DatePicker v-model="form.end_date" />
+				</div>
 				<FormControl
 					type="select"
 					:options="['Active', 'Inactive']"
